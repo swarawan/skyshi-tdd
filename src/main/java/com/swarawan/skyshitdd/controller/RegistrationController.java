@@ -1,5 +1,7 @@
 package com.swarawan.skyshitdd.controller;
 
+import com.swarawan.skyshitdd.model.RegistrationRequestModel;
+import com.swarawan.skyshitdd.model.RegistrationResponseModel;
 import com.swarawan.skyshitdd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -7,9 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/registration")
@@ -23,7 +22,8 @@ public class RegistrationController {
     }
 
     @PostMapping
-    public ResponseEntity<?> registration(@RequestBody Map<String, Object> request) {
-        return ResponseEntity.ok().build();
+    public ResponseEntity<?> registration(@RequestBody RegistrationRequestModel request) throws Exception {
+        RegistrationResponseModel response = userService.doRegistration(request);
+        return ResponseEntity.ok(response);
     }
 }

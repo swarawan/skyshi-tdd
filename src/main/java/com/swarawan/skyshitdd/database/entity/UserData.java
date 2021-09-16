@@ -16,6 +16,9 @@ public class UserData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "ud_email")
+    private String email;
+
     @Column(name = "ud_fullname")
     private String name;
 

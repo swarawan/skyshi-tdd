@@ -1,8 +1,11 @@
 package com.swarawan.skyshitdd.service;
 
-import com.sun.xml.bind.v2.TODO;
+import com.swarawan.skyshitdd.model.RegistrationRequestModel;
+import com.swarawan.skyshitdd.model.RegistrationResponseModel;
+
+import java.util.Map;
 
 public interface UserService {
 
-    // TODO: 16/09/21 Add function here
+    RegistrationResponseModel doRegistration(RegistrationRequestModel request) throws Exception;
 }
